@@ -21,7 +21,7 @@ export default function Navbar() {
         } else {
             return 'text-neutral-50'
         }
-    }, [])
+    }, [router])
 
     return (
         <div className="relative w-full flex">
