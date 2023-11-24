@@ -1,5 +1,3 @@
-import styles from './page.module.scss';
-
 export default async function Index() {
   /*
    * Replace the elements below with your own.
@@ -7,9 +5,9 @@ export default async function Index() {
    * Note: The corresponding styles are in the ./index.scss file.
    */
   return (
-    <div className={styles.page}>
+    <div className={''}>
       <div className="wrapper">
-        <div className="container">
+        {/* <div className="container">
           <div id="welcome">
             <h1>
               <span> Hello there, </span>
@@ -443,7 +441,7 @@ export default async function Index() {
               />
             </svg>
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
