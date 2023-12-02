@@ -1,16 +1,20 @@
 'use client'
 
 import React, { useCallback } from "react";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import Link from "next/link";
 import LogoIcon from "../../icons/LogoIcon";
 import { usePathname } from 'next/navigation'
+import {
+    ConnectWallet,
+    darkTheme,
+} from "@thirdweb-dev/react";
 
-const WalletMultiButtonDynamic = dynamic(
-    async () =>
-        (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
-    { ssr: false }
-);
+// const WalletMultiButtonDynamic = dynamic(
+//     async () =>
+//         (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
+//     { ssr: false }
+// );
 
 export default function Navbar() {
     const router = usePathname();
@@ -47,9 +51,20 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className='flex items-center justify-end'>
-                    <div className="flex w-full border border-[#B73FFF] rounded-3xl">
-                        <WalletMultiButtonDynamic />
-                    </div>
+                    {/* <div className="flex w-full border border-[#B73FFF] rounded-3xl"> */}
+                    {/* <WalletMultiButtonDynamic /> */}
+                    <ConnectWallet
+                        theme={darkTheme({
+                            colors: {
+                                accentText: "#B73FFF",
+                                accentButtonBg: "#B73FFF",
+                            },
+                        })}
+                        modalSize={"wide"}
+                        welcomeScreen={{}}
+                        modalTitleIconUrl={""}
+                    />
+                    {/* </div> */}
                 </div>
             </div>
             {/* divider line */}
