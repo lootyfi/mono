@@ -1,5 +1,6 @@
 import Navbar from './components/navbar/layout';
-import WalletWrapper from './connections/WalletWrapper';
+import EthWalletWrapper from './connections/EthWalletWrapper';
+// import WalletWrapper from './connections/WalletWrapper';
 import './global.css';
 import localFont from 'next/font/local';
 
@@ -17,7 +18,6 @@ const adlamFont = localFont({
   ],
 });
 
-
 export default function RootLayout({
   children,
 }: {
@@ -25,12 +25,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={adlamFont.className}>
-      <WalletWrapper>
+      {/* <WalletWrapper> */}
+      <EthWalletWrapper>
         <body>
           <Navbar />
           {children}
         </body>
-      </WalletWrapper>
+      </EthWalletWrapper>
+      {/* </WalletWrapper> */}
     </html>
   );
 }

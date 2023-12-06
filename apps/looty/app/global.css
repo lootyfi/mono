@@ -20,6 +20,10 @@
   --secondary-colorsgreen: rgba(83, 244, 147, 1);
   --secondary-colorstext-1: rgba(215, 204, 224, 1);
   --secondary-colorstext-2: rgba(136, 114, 153, 1);
+
+  --font-body: "Open Sans", sans-serif;
+  --font-looty: "AdLamDisplay", sans-serif;
+
 }
 
 .wallet-adapter-dropdown {
@@ -74,9 +78,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.5;
   tab-size: 4;
   scroll-behavior: smooth;
@@ -105,4 +107,356 @@ h1,
 h2 {
   font-size: inherit;
   font-weight: inherit;
+}
+
+.list {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  justify-content: center;
+  position: relative;
+  width: 1415px;
+}
+
+.list .frame {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 0px 0px 0px 20px;
+  position: relative;
+  width: 1238px;
+}
+
+.list .div {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 14px;
+  position: relative;
+}
+
+.list .text-wrapper {
+  color: var(--main-colorslight);
+  font-family: "Open Sans-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 45px;
+  margin-top: -1px;
+  position: relative;
+  width: 78px;
+}
+
+.list .report-collection {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 2px;
+  position: relative;
+}
+
+.list .text-wrapper-2 {
+  color: var(--secondary-colorstext-2);
+  font-family: "Open Sans-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 31.2px;
+  margin-top: -1px;
+  position: relative;
+  text-decoration: underline;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.list .general-flag {
+  height: 20px;
+  position: relative;
+  width: 20px;
+}
+
+.list .frame-2 {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 805px;
+}
+
+.list .floor {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 206px;
+}
+
+.list .div-wrapper {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 206px;
+}
+
+.list .text-wrapper-3 {
+  align-self: stretch;
+  color: var(--main-colorslight);
+  font-family: "Open Sans-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 45px;
+  margin-top: -1px;
+  position: relative;
+}
+
+.list .text-wrapper-4 {
+  color: var(--main-colorslight);
+  font-family: "Open Sans-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 45px;
+  margin-top: -1px;
+  position: relative;
+  width: 163px;
+}
+
+.list .text-wrapper-5 {
+  color: var(--main-colorslight);
+  font-family: "Open Sans-Regular", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 45px;
+  margin-top: -1px;
+  position: relative;
+  width: 136px;
+}
+
+.list .frame-3 {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+}
+
+.list .frame-4 {
+  align-items: center;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 15px 20px;
+  position: relative;
+  width: 100%;
+}
+
+.list .frame-5 {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 1218px;
+}
+
+.list .frame-6 {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  position: relative;
+  width: 389px;
+}
+
+.list .group {
+  background-color: var(--main-colorslight);
+  /* background-image: url(./rectangle-112.png); */
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 10px;
+  height: 65px;
+  position: relative;
+  width: 65px;
+}
+
+.list .securely-provide-liq {
+  color: var(--main-colorslight);
+  flex: 1;
+  font-family: "Open Sans-SemiBold", Helvetica;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+}
+
+.list .frame-7 {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 805px;
+}
+
+.list .frame-8 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 9px;
+  position: relative;
+}
+
+.list .text-wrapper-6 {
+  color: var(--main-colorslight);
+  font-family: "Open Sans-SemiBold", Helvetica;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 45px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.list .p {
+  color: var(--secondary-colorstext-2);
+  font-family: "Open Sans-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  height: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  width: 178px;
+}
+
+.list .solana-sol-logo {
+  height: 19px;
+  position: relative;
+  width: 25px;
+}
+
+.list .text-wrapper-7 {
+  align-self: stretch;
+  color: var(--secondary-colorstext-2);
+  font-family: "Open Sans-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  height: 30px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+}
+
+.list .text-wrapper-8 {
+  color: var(--secondary-colorsgreen);
+  font-family: "Open Sans-SemiBold", Helvetica;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 45px;
+  position: relative;
+  width: 163px;
+}
+
+.list .text-wrapper-9 {
+  color: var(--main-colorslight);
+  font-family: "Open Sans-SemiBold", Helvetica;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 45px;
+  position: relative;
+  width: 136px;
+}
+
+.list .frame-9 {
+  align-items: center;
+  background: linear-gradient(180deg, rgb(214, 48, 255) 0%, rgb(177, 48, 255) 100%);
+  border-radius: 15px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px 40px;
+  position: relative;
+}
+
+.list .text-wrapper-10 {
+  color: var(--main-colorslight);
+  font-family: "Open Sans-Bold", Helvetica;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1.5px;
+  position: relative;
+  width: fit-content;
+}
+
+.list .frame-10 {
+  align-items: center;
+  align-self: stretch;
+  background-color: var(--secondary-colorsdetails);
+  border-radius: 10px;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: space-between;
+  padding: 15px 20px;
+  position: relative;
+  width: 100%;
+}
+
+.list .group-2 {
+  background-color: #e30613;
+  /* background-image: url(./image.png); */
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 10px;
+  height: 65px;
+  position: relative;
+  width: 65px;
+}
+
+.list .frame-11 {
+  align-items: center;
+  background: linear-gradient(180deg, rgb(214, 48, 255) 0%, rgb(177, 48, 255) 100%);
+  border: 3px solid;
+  border-color: var(--main-colorslight);
+  border-radius: 15px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px 40px;
+  position: relative;
+}
+
+.list .text-wrapper-11 {
+  color: var(--main-colorslight);
+  font-family: "Open Sans-ExtraBold", Helvetica;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -3px;
+  position: relative;
+  width: fit-content;
+}
+
+.list .rectangle {
+  height: 65px;
+  object-fit: cover;
+  position: relative;
+  width: 65px;
 }
