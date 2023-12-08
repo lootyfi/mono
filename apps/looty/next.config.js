@@ -13,7 +13,7 @@ const nextConfig = {
     svgr: false,
   },
   images: {
-      domains: ['encrypted-tbn0.gstatic.com'],
+      domains: ['ik.imagekit.io'],
     }
 };
 

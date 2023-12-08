@@ -12,9 +12,14 @@ module.exports = {
     extend: {
       fontFamily: {     
       'body': ['var(--font-body)'],
-    }
+      },
+      boxShadow: {
+        left: '-0.5rem 0 1.5rem #000',
+        right: '0.5rem 0 1.5rem #000',
+      },
 
     },
   },
-  plugins: [],
+  plugins: [
+		require("tailwindcss-animate"),	],
 }

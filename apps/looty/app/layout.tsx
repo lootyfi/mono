@@ -18,13 +18,28 @@ const adlamFont = localFont({
   ],
 });
 
+const openSans = localFont({
+  src: [
+    {
+      path: '../public/fonts/OpenSans-VariableFont_wdth,wght.ttf',
+      weight: '400',
+    },
+  ],
+});
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+
   return (
-    <html lang="en" className={adlamFont.className}>
+    <html lang="en" className={adlamFont.className} style={{
+      fontFamily: openSans.style.fontFamily,
+    }}>
+      {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
+      <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet" /> */}
       {/* <WalletWrapper> */}
       <EthWalletWrapper>
         <body>

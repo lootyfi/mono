@@ -38,8 +38,8 @@ export const columns: ColumnDef<Projects>[] = [
                         <div className="font-semibold">{project.projectName}</div>
                         <div className="text-xs opacity-60 flex items-center gap-2">Show Rewards
                             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.75" y="0.75" width="13.5" height="13.5" rx="6.75" stroke="#887299" stroke-width="1.5" />
-                                <path d="M7.09234 11.0569L10.5615 7.58775M10.5615 7.58775L7.09234 4.11857M10.5615 7.58775L3.62316 7.58775" stroke="#887299" stroke-width="2" stroke-linejoin="round" />
+                                <rect x="0.75" y="0.75" width="13.5" height="13.5" rx="6.75" stroke="#887299" strokeWidth="1.5" />
+                                <path d="M7.09234 11.0569L10.5615 7.58775M10.5615 7.58775L7.09234 4.11857M10.5615 7.58775L3.62316 7.58775" stroke="#887299" strokeWidth="2" strokeLinejoin="round" />
                             </svg>
 
                         </div>
@@ -95,7 +95,9 @@ export const columns: ColumnDef<Projects>[] = [
         id: "actions",
         cell: ({ row }) => {
             return (
-                <button className="text-white text-[18px] bg-gradient-to-r from-[#D630FF] to-[#B130FF] rounded-2xl px-10 py-5">
+                <button className="text-white text-[18px] bg-gradient-to-r from-[#D630FF] to-[#B130FF] hover:outline outline-4 outline-white rounded-2xl px-10 py-5"
+                    onClick={(e) => e.stopPropagation()}
+                >
                     Mint
                 </button>
             )
