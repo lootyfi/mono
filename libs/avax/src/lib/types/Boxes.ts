@@ -52,15 +52,28 @@ export interface BoxesMethodConstantReturnContext<TCallReturn> {
 }
 
 export interface MethodReturnContext extends MethodPayableReturnContext {}
-
+export interface BoxOpenedEventEmittedResponse {
+  receiver: string;
+  burnedTokenId: string;
+  mintedBoxId: string;
+}
 export type BoxesContractContext = Web3ContractContext<
   Boxes,
   BoxesMethodNames,
   BoxesEventsContext,
   BoxesEvents
 >;
-export type BoxesEvents = 'OwnershipTransferred';
+export type BoxesEvents = 'OwnershipTransferred' | 'BoxOpened';
 export interface BoxesEventsContext {
+  BoxOpened(
+    parameters: {
+      filter?: {};
+      fromBlock?: number;
+      toBlock?: 'latest' | number;
+      topics?: string[];
+    },
+    callback?: (error: Error, event: EventData) => void
+  ): EventResponse;
   OwnershipTransferred(
     parameters: {
       filter?: {

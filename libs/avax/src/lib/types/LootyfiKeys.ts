@@ -14,6 +14,12 @@ export interface KeysCallOptions {
   gas?: number;
 }
 
+export interface KeyMintedEventEmittedResponse {
+  user: string;
+  tokenId: string;
+  uri: string;
+}
+
 export interface KeysSendOptions {
   from: string;
   value?: number | string | BN | BigNumber;
@@ -50,7 +56,10 @@ export interface KeysMethodConstantReturnContext<TCallReturn> {
   ): Promise<TCallReturn>;
   encodeABI(): string;
 }
-
+export interface GetPriceConfigResponse {
+  result0: string;
+  result1: string;
+}
 export interface KeysMethodReturnContext
   extends KeysMethodPayableReturnContext {}
 
@@ -64,6 +73,7 @@ export type LootyfiKeysEvents =
   | 'Approval'
   | 'ApprovalForAll'
   | 'BatchMetadataUpdate'
+  | 'KeyMinted'
   | 'MetadataUpdate'
   | 'OwnershipTransferred'
   | 'Transfer';
@@ -91,6 +101,15 @@ export interface LootyfiKeysEventsContext {
     callback?: (error: Error, event: EventData) => void
   ): EventResponse;
   BatchMetadataUpdate(
+    parameters: {
+      filter?: {};
+      fromBlock?: number;
+      toBlock?: 'latest' | number;
+      topics?: string[];
+    },
+    callback?: (error: Error, event: EventData) => void
+  ): EventResponse;
+  KeyMinted(
     parameters: {
       filter?: {};
       fromBlock?: number;
@@ -254,6 +273,9 @@ export interface LootyfiKeys {
    * Type: function
    */
   getMintedCount(): KeysMethodConstantReturnContext<string>;
+
+  getPriceConfig(): KeysMethodConstantReturnContext<GetPriceConfigResponse>;
+
   /**
    * Payable: false
    * Constant: true

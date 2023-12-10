@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@org/avalanche": ["avalanche/src/index.ts"],
-      "@org/avax": ["avax/src/index.ts"]
+      "@org/avax": ["libs/avax/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
