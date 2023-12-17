@@ -17,6 +17,9 @@ module.exports = {
         left: '-0.5rem 0 1.5rem #000',
         right: '0.5rem 0 1.5rem #000',
       },
+      backgroundImage: {
+        'hero-pattern': "url('/images/hero-image.svg')",
+      }
 
     },
   },

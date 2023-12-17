@@ -1,22 +1,11 @@
 "use client"
 
 import { ColumnDef } from "@tanstack/react-table"
-import Image, { StaticImageData } from "next/image"
-import { formatDate } from "../lib/utils"
+import Image from "next/image"
+import { formatDate } from "../../lib/utils"
+import { Projects } from "../../lib/interface"
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type Projects = {
-    organizationId: string
-    id: string
-    projectName: string
-    image: string | StaticImageData
-    rewardsNumber: string
-    maxMintPrice: string
-    mintMintPrice: string
-    stepMintPrice: string
-    keysMinted: string
-    remainingTime: string
-}
 
 export const columns: ColumnDef<Projects>[] = [
     {

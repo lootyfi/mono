@@ -6,7 +6,7 @@ import {
     getCoreRowModel,
     useReactTable,
 } from "@tanstack/react-table"
-import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "../components/ui/table"
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "../ui/table"
 
 
 interface DataTableProps<TData, TValue> {

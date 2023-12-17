@@ -1,4 +1,5 @@
-import Navbar from './components/navbar/layout';
+import Navbar from './components/ui/navbar';
+import Footer from './components/ui/footer';
 import EthWalletWrapper from './connections/EthWalletWrapper';
 // import WalletWrapper from './connections/WalletWrapper';
 import './global.css';
@@ -45,6 +46,7 @@ export default function RootLayout({
         <body>
           <Navbar />
           {children}
+          <Footer />
         </body>
       </EthWalletWrapper>
       {/* </WalletWrapper> */}

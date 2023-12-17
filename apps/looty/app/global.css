@@ -88,6 +88,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  overflow-x: hidden;
   font-family: inherit;
   line-height: inherit;
   background-color: #1B142E;
@@ -98,7 +99,9 @@ body {
 }
 h1,
 h2,
-p,
+h3,
+h4,
+h5,
 pre {
   font-family: '__adlamFont_5c0243', sans-serif;
   margin: 0;

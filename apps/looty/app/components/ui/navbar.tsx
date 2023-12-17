@@ -28,12 +28,14 @@ export default function Navbar() {
     }, [router])
 
     return (
-        <div className="fixed w-full flex bg-[#1B142E]">
-            <div className="flex w-full items-center justify-center my-12">
+        <div className="fixed w-full flex bg-[#1B142E] z-40">
+            <div className="flex w-full items-center justify-center my-6">
                 <div className="flex w-full max-w-7xl">
                     <div className="flex w-full">
-                        <div className='flex justify-start mr-[70px]'>
-                            <LogoIcon className="flex w-full h-[45px]" />
+                        <div className='flex justify-start mr-[70px] items-center'>
+                            <Link href={'/'} className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
+                                <LogoIcon className="flex w-full h-full" />
+                            </Link>
                         </div>
                         <div className="px-[15px] py-[5px] relative flex-[0_0_auto] inline-flex items-center justify-center">
                             <Link href={'/mint'} className={`relative w-fit mt-[-1.00px] [font-family:'Open_Sans-ExtraBold',Helvetica] font-extrabold ${highlightNavLinks('/mint')} text-[18px] text-center tracking-[0] leading-[normal]`}>
@@ -70,7 +72,7 @@ export default function Navbar() {
                 </div>
             </div>
             {/* divider line */}
-            <div className="absolute w-full h-[4px] bg-[#201935] top-[145px]"></div>
+            <div className="absolute w-full h-[4px] bg-[#201935] top-[95px]"></div>
         </div >
     );
 };

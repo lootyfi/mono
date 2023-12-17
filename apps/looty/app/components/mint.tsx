@@ -1,19 +1,14 @@
 'use client'
-import React, { FC, Suspense } from 'react'
-import { Skeleton } from '../components/ui/skeleton'
-import { columns } from '../projects/columns'
-import { DataTable } from '../projects/dataTable'
-import { MintProps } from './interface'
-import { Drawer, DrawerDirection } from '../components/ui/drawer'
+import React, { Suspense } from 'react'
+import { Skeleton } from './ui/skeleton'
+import { columns } from './projects/columns'
+import { DataTable } from './projects/dataTable'
+import { Drawer, DrawerDirection } from './ui/drawer'
+import { Projects } from '../lib/interface'
 
 
-export const MintContent: FC<MintProps> = ({ projectsData }) => {
+export function MintContent({ projectsData }: { projectsData: Projects[] }): JSX.Element {
     const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
-
-
-
-    console.log(isDrawerOpen, 'isDrawerOpen');
-
 
     const onRowClick = (row: unknown) => {
         setIsDrawerOpen(!isDrawerOpen)
