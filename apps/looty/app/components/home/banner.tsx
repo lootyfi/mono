@@ -1,9 +1,9 @@
 'use client'
 import Image from "next/image";
-import { useMediaQuery } from "@uidotdev/usehooks";
+import useMediaQuery from "../../hooks/useDevice";
 
 export const Banner = () => {
-    const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+    const isSmallDevice = useMediaQuery();
 
     /*
      * Replace the elements below with your own.

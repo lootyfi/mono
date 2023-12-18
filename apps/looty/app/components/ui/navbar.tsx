@@ -9,8 +9,8 @@ import { usePathname } from 'next/navigation'
 //     darkTheme,
 
 // } from "@thirdweb-dev/react";
-import { useMediaQuery } from "@uidotdev/usehooks";
 import HamburgerMenu from "./hamburgerMenu";
+import useMediaQuery from "../../hooks/useDevice";
 
 // const WalletMultiButtonDynamic = dynamic(
 //     async () =>
@@ -20,7 +20,7 @@ import HamburgerMenu from "./hamburgerMenu";
 
 export const Navbar = () => {
     const router = usePathname();
-    const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+    const isSmallDevice = useMediaQuery();
 
     const highlightNavLinks = useCallback((path: string) => {
         if (router === path) {
@@ -87,3 +87,5 @@ export const Navbar = () => {
         </>
     );
 };
+
+export default Navbar;

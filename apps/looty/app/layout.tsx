@@ -1,9 +1,11 @@
-import { Navbar } from './components/ui/navbar';
 import Footer from './components/ui/footer';
 // import EthWalletWrapper from './connections/EthWalletWrapper';
 // import WalletWrapper from './connections/WalletWrapper';
 import './global.css';
+import { Navbar } from './components/ui/navbar';
 import localFont from 'next/font/local';
+
+
 
 export const metadata = {
   title: 'Welcome to looty',
