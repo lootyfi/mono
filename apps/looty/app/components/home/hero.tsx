@@ -17,12 +17,12 @@ export default async function Hero() {
                             Mint keys from your favorite brands and open the box with exclusive rewards.
                         </p>
                         <div className="flex w-full justify-start gap-6 flex-col lg:flex-row">
-                            <button className="text-white text-[18px] font-bold bg-gradient-to-r from-[#D630FF] to-[#B130FF] hover:outline outline-4 outline-white rounded-2xl px-10 py-5"
+                            <button className="cursor-not-allowed text-white text-[18px] font-bold bg-gradient-to-r from-[#D630FF] to-[#B130FF] hover:outline outline-4 outline-white rounded-2xl px-10 py-5"
                             // onClick={() => { }}
                             >
                                 Mint now
                             </button>
-                            <button className="text-white text-[18px] font-bold border-solid border-2 border-[#B130FF] bg-transparent hover:outline outline-4 outline-white rounded-2xl px-10 py-5"
+                            <button className="cursor-not-allowed text-white text-[18px] font-bold border-solid border-2 border-[#B130FF] bg-transparent hover:outline outline-4 outline-white rounded-2xl px-10 py-5"
                             // onClick={() => { }}
                             >
                                 Open the box

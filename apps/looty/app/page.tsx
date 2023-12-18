@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { Faq } from "./components/home/faq";
-import DiscordIcon from "./icons/DiscordIcon";
 import Hero from "./components/home/hero";
 import Partners from "./components/home/partners";
 import Features from "./components/home/features";
