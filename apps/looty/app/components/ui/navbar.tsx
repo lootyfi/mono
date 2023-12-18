@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useCallback } from "react";
 // import dynamic from "next/dynamic";
 import Link from "next/link";
@@ -8,6 +7,7 @@ import { usePathname } from 'next/navigation'
 // import {
 //     ConnectWallet,
 //     darkTheme,
+
 // } from "@thirdweb-dev/react";
 import { useMediaQuery } from "@uidotdev/usehooks";
 import HamburgerMenu from "./hamburgerMenu";
