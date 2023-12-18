@@ -33,7 +33,7 @@ const Drawer = ({
     });
     return (
         <div className={`${isOpen ? 'visible' : 'hidden'} fixed z-50 w-screen h-screen backdrop:bg/80 top-0 left-0 bottom-0  transition ease-in-out duration-500  backdrop-blur-sm `}>
-            <div ref={ref} className={`fixed z-50 ${height} w-[400px] bg-[#1B142E] right-0`}>
+            <div ref={ref} className={`fixed z-50 ${height} w-full lg:w-[400px] bg-[#1B142E] right-0`}>
                 <div className="absolute top-7 right-7 flex cursor-pointer" onClick={onClose}>
                     <CloseIcon />
                 </div>
