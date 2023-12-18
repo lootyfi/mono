@@ -45,7 +45,7 @@ const HamburgerMenu = () => {
                 {/* divider line */}
                 <div className="absolute w-full h-[4px] bg-[#201935] top-[85px]"></div>
             </div>
-            <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)} direction={DrawerDirection.Left} height='h-1/2'>
+            <Drawer isOpen={isOpen} onClose={() => setIsOpen(false)} direction={DrawerDirection.Left} height='h-full'>
                 <div className="flex w-full flex-col justify-center items-center gap-32">
                     <div className="flex w-full flex-col items-center justify-center text-white text-2xl gap-8">
                         <Link href={'/mint'}>
