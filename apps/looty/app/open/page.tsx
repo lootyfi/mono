@@ -1,6 +1,8 @@
+import { redirect } from 'next/navigation'
 import React from 'react'
 
 function Mint() {
+    redirect('/coming-soon')
     return (
         <div className='flex w-full'>
             <div className='flex flex-col w-full justify-center mt-32 mx-52 text-center'>

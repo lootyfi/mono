@@ -1,6 +1,8 @@
+import { redirect } from 'next/navigation'
 import React from 'react'
 
-function Mint() {
+function Rewards() {
+    redirect('/coming-soon')
     return (
         <div className='flex w-full'>
             <div className='flex flex-col w-full justify-center mt-32 mx-auto max-w-7xl text-center'>
@@ -13,4 +15,4 @@ function Mint() {
     )
 }
 
-export default Mint
+export default Rewards

@@ -7,17 +7,17 @@ import XIcon from '../../icons/XIcon';
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     return (
-        <div className='flex w-full mx-auto items-center justify-between bg-[#332950] py-10'>
+        <div className='absolute bottom-0 flex w-full mx-auto items-center justify-between bg-[#332950] py-10'>
             <div className='flex w-full items-center justify-center'>
-                <div className='flex w-full max-w-7xl justify-between'>
-                    <div className='flex items-center'>
+                <div className='flex flex-col lg:flex-row w-full max-w-7xl justify-between gap-4'>
+                    <div className='flex items-center justify-center'>
                         <div className='flex items-center'>
                             <Link href={'/'} className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
                                 <LogoIcon className="flex w-full h-full" />
                             </Link>
                         </div>
                     </div>
-                    <div className='flex items-center gap-4'>
+                    <div className='flex items-center gap-4 justify-center'>
                         <Link href={'/'} className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
                             <DiscordIcon className='cursor-pointer' />
                         </Link>

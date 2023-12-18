@@ -42,13 +42,13 @@ export default function RootLayout({
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet" /> */}
       {/* <WalletWrapper> */}
-      <EthWalletWrapper>
-        <body>
-          <Navbar />
-          {children}
-          <Footer />
-        </body>
-      </EthWalletWrapper>
+      {/* <EthWalletWrapper> */}
+      <body className='relative flex flex-col h-full'>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
+      {/* </EthWalletWrapper> */}
       {/* </WalletWrapper> */}
     </html>
   );
