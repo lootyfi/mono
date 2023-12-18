@@ -1,6 +1,6 @@
-import Navbar from './components/ui/navbar';
+import { Navbar } from './components/ui/navbar';
 import Footer from './components/ui/footer';
-import EthWalletWrapper from './connections/EthWalletWrapper';
+// import EthWalletWrapper from './connections/EthWalletWrapper';
 // import WalletWrapper from './connections/WalletWrapper';
 import './global.css';
 import localFont from 'next/font/local';

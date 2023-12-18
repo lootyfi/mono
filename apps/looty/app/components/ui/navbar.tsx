@@ -18,7 +18,7 @@ import HamburgerMenu from "./hamburgerMenu";
 //     { ssr: false }
 // );
 
-export default function Navbar() {
+export const Navbar = () => {
     const router = usePathname();
     const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
 
