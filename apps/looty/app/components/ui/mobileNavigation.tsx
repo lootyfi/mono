@@ -14,7 +14,7 @@ const variants = {
     closed: { opacity: 0, x: "-100%" },
 }
 
-const HamburgerMenu = () => {
+const MobileNavigation = () => {
     const [isOpen, setIsOpen] = React.useState(false);
     const router = usePathname();
     const handleClick = () => {
@@ -91,4 +91,4 @@ const HamburgerMenu = () => {
 }
 
 
-export default HamburgerMenu
+export default MobileNavigation

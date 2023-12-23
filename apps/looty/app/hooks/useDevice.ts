@@ -14,7 +14,7 @@ const useMediaQuery = () => {
     mediaQuery.addListener(handler);
  
     return () => mediaQuery.removeListener(handler);
-  }, []);
+  }, [isMobile, setIsMobile]);
  
   return isMobile;
 };
