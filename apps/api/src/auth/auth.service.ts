@@ -12,9 +12,8 @@ import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
 import dayjs from 'dayjs';
 import { Model } from 'mongoose';
-import { SignInDto } from '../user/dto/signin.dto';
 import { User, UserRole } from '../user/model/user.model';
-import { Response } from 'express';
+
 import { SharedService } from '../shared/shared.service';
 import { SIGN_MESSAGE } from '../utils/constants';
 
