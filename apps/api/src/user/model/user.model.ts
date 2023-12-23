@@ -7,10 +7,12 @@ export enum UserRole {
 
 @Schema()
 export class User {
-  @Prop()
+  @Prop({ unique: true })
   wallet: string;
   @Prop()
   refreshToken: string;
-  @Prop({ type: UserRole })
+  @Prop({ type: String, enum: UserRole })
   role: UserRole;
 }
+
+export const UserSchema = SchemaFactory.createForClass(User);

@@ -1,7 +1,14 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Query, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '../guards/auth.guard';
+import { AuthService } from './auth.service';
 
 @Controller('/auth')
 export class AuthController {
-  @Post()
-  refreshToken(@Body('refreshToken') refreshToken: { refreshToken: string }) {}
+  constructor(private authService: AuthService) {}
+
+  refreshToken(@Body('refreshToken') refreshToken: { refreshToken: string }) {
+    return this.authService.refreshToken(refreshToken.refreshToken);
+  }
+
+  login(@Body('login') login: string) {}
 }

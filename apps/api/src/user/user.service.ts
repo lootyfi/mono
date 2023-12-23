@@ -16,14 +16,14 @@ export class UserService {
     private readonly authService: AuthService
   ) {}
   async authenticate(signature: string, wallet: string, unixTimestamp: number) {
-    const isValidSignature = this.sharedService.verifySignedMessage(
-      `${SIGN_MESSAGE}${wallet}: ${unixTimestamp}`,
-      signature,
-      wallet
-    );
+    // const isValidSignature = this.sharedService.verifySignedMessage(
+    //   `${SIGN_MESSAGE}${wallet}: ${unixTimestamp}`,
+    //   signature,
+    //   wallet
+    // );
 
-    if (!isValidSignature)
-      throw new UnauthorizedException('Failed to verify wallet ownership!');
+    // if (!isValidSignature)
+    //   throw new UnauthorizedException('Failed to verify wallet ownership!');
 
     if (dayjs().diff(dayjs(unixTimestamp), 'seconds') > 60) {
       throw new UnauthorizedException();
