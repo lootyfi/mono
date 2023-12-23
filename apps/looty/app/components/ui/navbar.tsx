@@ -1,5 +1,5 @@
 'use client'
-import React, { use, useEffect, useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 
 // import {
 //     ConnectWallet,
