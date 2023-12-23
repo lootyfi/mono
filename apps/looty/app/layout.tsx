@@ -10,7 +10,7 @@ import localFont from 'next/font/local';
 export const metadata = {
   title: 'Welcome to looty',
   description: 'Mint your looty now!',
-  image: 'https://ik.imagekit.io/nqz2h82e3/Group%20266.png?updatedAt=1702045973913',
+  image: '/images/looty.png',
 };
 
 const adlamFont = localFont({
