@@ -8,6 +8,7 @@ import DiscordIcon from '../../icons/DiscordIcon';
 import XIcon from '../../icons/XIcon';
 import { usePathname } from 'next/navigation'
 import { motion } from "framer-motion"
+import { signIn } from "next-auth/react"
 
 const variants = {
     open: { opacity: 1, x: 0 },
@@ -37,7 +38,7 @@ const MobileNavigation = () => {
                         </div>
                         {/* connect wallet */}
                         <div className='flex gap-4'>
-                            <button className="flex w-fit h-fit px-2 justify-center items-center py-2 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
+                            <button onClick={() => signIn()} className="flex w-fit h-fit px-2 justify-center items-center py-2 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
                                 Connect wallet
                             </button>
                             <div className="flex w-full justify-end items-center pr-8">

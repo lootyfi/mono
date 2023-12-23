@@ -4,6 +4,7 @@ import Footer from './components/ui/footer';
 import './global.css';
 import { Navbar } from './components/ui/navbar';
 import localFont from 'next/font/local';
+// import { SessionProvider } from "next-auth/react"
 
 
 
@@ -47,9 +48,11 @@ export default function RootLayout({
       {/* <WalletWrapper> */}
       {/* <EthWalletWrapper> */}
       <body className='relative flex flex-col h-full'>
+        {/* <SessionProvider> */}
         <Navbar />
         {children}
         <Footer />
+        {/* </SessionProvider> */}
       </body>
       {/* </EthWalletWrapper> */}
       {/* </WalletWrapper> */}

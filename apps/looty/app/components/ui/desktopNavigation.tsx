@@ -3,6 +3,7 @@ import React, { useCallback } from "react";
 import Link from "next/link";
 import LogoIcon from "../../icons/LogoIcon";
 import { usePathname } from 'next/navigation'
+import { signIn } from "next-auth/react"
 
 export const DesktopNavigation = () => {
     const router = usePathname();
@@ -56,7 +57,10 @@ export const DesktopNavigation = () => {
                                     welcomeScreen={{ title: "Welcome to Looty", subtitle: "Connect your wallet to continue", img: { src: 'https://ik.imagekit.io/nqz2h82e3/Group%20266.png?updatedAt=1702045973913', width: 100 }, }}
                                     modalTitleIconUrl={""}
                                 /> */}
-                            <button className="cursor-not-allowed flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
+                            {/* <Link href={'/api/auth/callback/twitter'} className="flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
+                                Connect wallet
+                            </Link> */}
+                            <button onClick={() => signIn('twitter')} className="flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
                                 Connect wallet
                             </button>
                             {/* </div> */}

@@ -112,10 +112,8 @@ async function getData(): Promise<Projects[]> {
 
 
 export default function Page() {
-    redirect('/coming-soon')
+    // redirect('/coming-soon')
     const data = use(getData());
-
-
 
     // if data is in pending promise show skeleton
     // if data is in error state show error message
