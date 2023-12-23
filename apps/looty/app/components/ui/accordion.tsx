@@ -7,6 +7,7 @@ import { cn } from "../../lib/utils"
 
 const Accordion = AccordionPrimitive.Root
 
+
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
@@ -27,7 +28,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 font-normal transition-all hover:underline [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg]:text-[#B73FFF] font-sans",
+        "flex flex-1 items-center justify-between py-4 font-normal transition ease-in-out delay-150 [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg]:text-[#B73FFF] font-sans",
         className
       )}
       {...props}

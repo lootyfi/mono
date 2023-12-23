@@ -18,10 +18,10 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className='flex items-center gap-4 justify-center'>
-                        <Link href={'/'} className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
+                        <Link href={'https://twitter.com/looty_fi'} target='_blank' className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
                             <DiscordIcon className='cursor-pointer' />
                         </Link>
-                        <Link href={'/'} className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
+                        <Link href={'https://twitter.com/looty_fi'} target='_blank' className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
                             <XIcon className='cursor-pointer' />
                         </Link>
                         <svg xmlns="http://www.w3.org/2000/svg" width="2" height="27" viewBox="0 0 2 27" fill="none">

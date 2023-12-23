@@ -17,7 +17,7 @@ export function Faq() {
             </div>
             <div className="max-w-4xl z-20 px-8 lg:px-0">
                 <div className="flex flex-col w-full justify-center lg:justify-start gap-10">
-                    <h3 className="text-[30px] lg:text-[55px] leading-[3rem] lg:leading-[5rem] text-white">Frequently Asked Questions</h3>
+                    <h3 className="text-[35px] lg:text-[55px] leading-[3rem] lg:leading-[5rem] text-white">Frequently Asked Questions</h3>
                     <p className="text-[24px]  text-white text-left font-normal">How do I mint keys?</p>
                 </div>
                 <Accordion type="single" collapsible className="w-full text-white">

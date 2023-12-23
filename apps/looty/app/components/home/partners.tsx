@@ -28,10 +28,10 @@ export default async function Partners() {
                 />
                 <Image
                     priority
-                    src="/images/sponsor-solana.svg"
+                    src="/images/sponsor-inspect.svg"
                     height={38}
-                    width={186}
-                    className="w-1/3 lg:w-auto"
+                    width={155}
+                    className="w-1/3 lg:w-auto fill-black"
                     alt="Follow us on Twitter"
                 />
             </div>

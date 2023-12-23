@@ -17,26 +17,26 @@ export default async function Features() {
                 alt="Light"
             />
             <div className='flex flex-col w-full mx-auto max-w-7xl items-center justify-center gap-12 mt-12 lg:mt-32 px-8 lg:px-0'>
-                <h3 className="text-[30px] lg:text-[55px] lg:leading-[5rem] text-white text-center lg:text-start">It`s super easy to <b className="text-[#B73FFF]">get rewards</b>!</h3>
+                <h3 className="text-[35px] lg:text-[55px] lg:leading-[5rem] text-white text-center lg:text-start">It`s super easy to <b className="text-[#B73FFF]">get rewards</b>!</h3>
                 <div className="flex gap-10 flex-col lg:flex-row text-center w-full items-center justify-center h-full px-8 lg:px-0">
-                    <div className="flex flex-col justify-center items-center gap-4 bg-[#201935] py-10 px-8 border border-[#332950] rounded-2xl w-full lg:w-1/4 box-content">
+                    <div className="flex flex-col justify-center items-center gap-4 bg-[#201935] py-4 px-8 border border-[#332950] rounded-2xl w-full lg:w-1/4 box-content">
                         <Image src="/images/mint-keys-icon.svg" height={45} width={45} alt="Mint keys" className="h-20" />
-                        <p className="text-[30px]  text-white">Mint your keys</p>
-                        <p className='flex  text-[#D7CCE0] w-full justify-center text-[21px] font-normal'>
+                        <p className="text-[30px] font-semibold text-white">Mint keys</p>
+                        <p className='flex pb-2 text-[#D7CCE0] w-full justify-center text-[18px] font-normal'>
                             Mint keys from your favorite brands and open the box with exclusive rewards.
                         </p>
                     </div>
-                    <div className="flex flex-col justify-center items-center gap-4 bg-[#201935] py-10 px-8 border border-[#332950] rounded-2xl w-full lg:w-1/4 box-content ">
+                    <div className="flex flex-col justify-center items-center gap-4 bg-[#201935] py-4 px-8 border border-[#332950] rounded-2xl w-full lg:w-1/4 box-content ">
                         <Image src="/images/open-box-icon.svg" height={65} width={65} alt="Open the box" className="h-20" />
-                        <p className="text-[30px]  text-white">Open the box</p>
-                        <p className='flex  text-[#D7CCE0] w-full justify-center text-[21px] font-normal'>
+                        <p className="text-[30px] font-semibold text-white">Open lootboxes</p>
+                        <p className='flex pb-2 text-[#D7CCE0] w-full justify-center text-[18px] font-normal'>
                             Open the box and claim your rewards. You can find all your rewards on the rewards page.
                         </p>
                     </div>
-                    <div className="flex flex-col justify-center items-center gap-4 bg-[#201935] py-10 px-8 border border-[#332950] rounded-2xl w-full lg:w-1/4 box-content">
+                    <div className="flex flex-col justify-center items-center gap-4 bg-[#201935] py-4 px-8 border border-[#332950] rounded-2xl w-full lg:w-1/4 box-content">
                         <Image src="/images/rewards-icon.svg" height={65} width={65} alt="Get rewards" className="h-20" />
-                        <p className="text-[30px]  text-white">Get rewards</p>
-                        <p className='flex  text-[#D7CCE0] w-full justify-center text-[21px] font-normal'>
+                        <p className="text-[30px] font-semibold text-white">Get rewards</p>
+                        <p className='flex pb-2 text-[#D7CCE0] w-full justify-center text-[18px] font-normal'>
                             Get rewards from your favorite brands. You can find all your rewards on the rewards page.
                         </p>
                     </div>
@@ -52,7 +52,7 @@ export default async function Features() {
                             alt="Key treasury"
                         />
                         <div className="flex flex-col gap-8 max-w-2xl pt-8 lg:pt-0 text-center lg:text-start justify-center px-8 lg:px-0">
-                            <h3 className='text-[30px] lg:text-[55px] text-white leading-[3rem] lg:leading-[4rem]'>Open the most exclusive rewards with <span className='text-[#B73FFF]'>your keys</span></h3>
+                            <h3 className='text-[35px] lg:text-[55px] text-white leading-[3rem] lg:leading-[4rem]'>Open the most exclusive rewards with <span className='text-[#B73FFF]'>your keys</span></h3>
                             <p className='flex  text-[#D7CCE0] w-full justify-center text-[21px] font-normal'>
                                 Looty has been collecting exclusive rewards for the most loyal fans. Use your key to receive your reward. Or trade limited supply of keys on the secondary market.
                             </p>
