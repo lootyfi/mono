@@ -4,9 +4,12 @@ import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { User, UserSchema } from '../user/model/user.model';
+import { AuthController } from './auth.controller';
+import { SharedModule } from '../shared/shared.module';
 @Module({
   imports: [
     ConfigModule,
+    SharedModule,
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
     JwtModule.registerAsync({
       imports: [ConfigModule],
@@ -20,6 +23,7 @@ import { User, UserSchema } from '../user/model/user.model';
       },
     }),
   ],
+  controllers: [AuthController],
   providers: [AuthService],
 })
 export class AuthModule {}

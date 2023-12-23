@@ -15,28 +15,4 @@ export class UserService {
     private readonly sharedService: SharedService,
     private readonly authService: AuthService
   ) {}
-  async authenticate(signature: string, wallet: string, unixTimestamp: number) {
-    // const isValidSignature = this.sharedService.verifySignedMessage(
-    //   `${SIGN_MESSAGE}${wallet}: ${unixTimestamp}`,
-    //   signature,
-    //   wallet
-    // );
-
-    // if (!isValidSignature)
-    //   throw new UnauthorizedException('Failed to verify wallet ownership!');
-
-    if (dayjs().diff(dayjs(unixTimestamp), 'seconds') > 60) {
-      throw new UnauthorizedException();
-    }
-
-    const tokens = await this.authService.signIn(wallet);
-    const user: User = new this.userModel({
-      refreshToken: tokens.refresh_token,
-      wallet,
-    });
-
-    const savedUser = await this.userModel.create(user);
-
-    return { tokens, savedUser };
-  }
 }
