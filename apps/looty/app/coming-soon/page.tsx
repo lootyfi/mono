@@ -6,7 +6,7 @@ import XIcon from '../icons/XIcon';
 
 function Comingsoon() {
     return (
-        <div className='flex flex-col w-full mt-20 md:mt-60 justify-start items-center gap-10 lg:mx-auto lg:max-w-7xl'>
+        <div className='flex flex-col w-full mt-20 md:mt-60 justify-start items-center gap-10 lg:mx-auto lg:max-w-7xl h-full'>
             <div className='flex flex-col w-full h-full justify-center items-center px-8 lg:px-0 gap-4'>
                 <div className='flex items-start justify-start'>
                     <h1 className='flex items-baseline justify-center flex-wrap text-center text-[45px] lg:text-[70px] text-white'>

@@ -1,20 +1,75 @@
 'use client'
-import React, { useCallback } from "react";
+import React from "react";
 import Link from "next/link";
 import LogoIcon from "../../icons/LogoIcon";
-import { usePathname } from 'next/navigation'
-import { signIn } from "next-auth/react"
+import { usePathname, useRouter } from 'next/navigation'
+import { signIn, signOut, useSession } from "next-auth/react"
+import { ethers } from "ethers";
+import dayjs from "dayjs";
+// import { useSession } from "next-auth/react";
+// import { useRouter } from 'next/navigation'
+
+
+// import { signOut, useSession } from "next-auth/react";
+async function onSignInWithCrypto() {
+    try {
+        if (!window.ethereum) {
+            window.alert("Please install MetaMask first.");
+            return;
+        }
+
+        // Get the wallet provider, the signer and address
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        const signer = await provider.getSigner();
+        const publicAddress = await signer.getAddress();
+
+        // Sign the received nonce
+        const signedNonce = await signer.signMessage(dayjs().unix().toString());
+
+        // Use NextAuth to sign in with our address and the nonce
+        await signIn("crypto", {
+            publicAddress,
+            signedNonce,
+            callbackUrl: "/mint",
+        });
+    } catch {
+        window.alert("Error with signing, please try again.");
+    }
+}
+
 
 export const DesktopNavigation = () => {
-    const router = usePathname();
+    const router = useRouter();
+    const pathName = usePathname();
+    // const { status } = useSession({
+    //     required: true,
+    //     onUnauthenticated() {
+    //         router.push("/auth");
+    //     },
+    // });
 
-    const highlightNavLinks = useCallback((path: string) => {
-        if (router === path) {
+    // if (status !== "authenticated") return null;
+
+    const { status, data } = useSession({
+        required: true,
+    });
+
+    console.log(status, 'status');
+    console.log(data, 'data');
+
+
+
+    const highlightNavLinks = (path: string) => {
+        if (pathName === path) {
             return 'text-[#b73fff]'
         } else {
             return 'text-neutral-50 hover:text-[#B73FFF]'
         }
-    }, [router])
+    }
+
+
+    // This function requests a nonce then signs it, proving that
+    //  the user owns the public address they are using
 
     return (
         <>
@@ -60,10 +115,16 @@ export const DesktopNavigation = () => {
                             {/* <Link href={'/api/auth/callback/twitter'} className="flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
                                 Connect wallet
                             </Link> */}
-                            <button onClick={() => signIn('twitter')} className="flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
-                                Connect wallet
-                            </button>
-                            {/* </div> */}
+                            {status ?
+                                <span className="flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
+                                    <button onClick={() => signOut()}>Log out</button>
+                                </span>
+                                :
+                                <button
+                                    onClick={() => signIn('twitter')}
+                                    className="flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
+                                    Connect wallet
+                                </button>}
                         </div>
                     </div>
                 </div>

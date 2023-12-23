@@ -121,7 +121,7 @@ export default function Page() {
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <div className='flex flex-col w-full items-center justify-center overflow-auto'>
+            <div className='flex flex-col w-full items-center justify-center'>
                 <div className='flex w-full mt-32 mx-auto max-w-7xl'>
                     <div className='flex flex-col w-full justify-center text-center items-center'>
                         <h1 className='text-[70px] text-white '>Mint your <span className='text-[#B73FFF]'>keys</span> to open the box</h1>

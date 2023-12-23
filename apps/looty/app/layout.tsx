@@ -4,6 +4,7 @@ import Footer from './components/ui/footer';
 import './global.css';
 import { Navbar } from './components/ui/navbar';
 import localFont from 'next/font/local';
+import Provider from './contexts/clientProvider';
 // import { SessionProvider } from "next-auth/react"
 
 
@@ -34,8 +35,10 @@ const openSans = localFont({
 
 export default function RootLayout({
   children,
+  session,
 }: {
   children: React.ReactNode;
+  session: any;
 }) {
 
   return (
@@ -47,11 +50,14 @@ export default function RootLayout({
       <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet" /> */}
       {/* <WalletWrapper> */}
       {/* <EthWalletWrapper> */}
-      <body className='relative flex flex-col h-full'>
-        {/* <SessionProvider> */}
-        <Navbar />
-        {children}
-        <Footer />
+      <body className='relative flex flex-col h-full w-full'>
+        <Provider session={session}>
+          <div className='min-h-screen'>
+            <Navbar />
+            {children}
+          </div>
+          <Footer />
+        </Provider>
         {/* </SessionProvider> */}
       </body>
       {/* </EthWalletWrapper> */}
