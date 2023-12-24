@@ -4,6 +4,7 @@ import Footer from './components/ui/footer';
 import './global.css';
 import { Navbar } from './components/ui/navbar';
 import localFont from 'next/font/local';
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 export const metadata = {
   title: 'Welcome to looty.fi',
@@ -43,7 +44,6 @@ export default function RootLayout({
         <meta property="og:image:type" content="<generated>" />
         <meta property="og:image:width" content="<generated>" />
         <meta property="og:image:height" content="<generated>" />
-
       </head>
       {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -51,6 +51,10 @@ export default function RootLayout({
       {/* <WalletWrapper> */}
       {/* <EthWalletWrapper> */}
       <body className='relative flex flex-col h-full'>
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleAnalytics ga_id=
+            {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string} />
+        ) : null}
         <Navbar />
         {children}
         <Footer />
