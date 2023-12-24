@@ -24,26 +24,25 @@ export function Faq() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>How do I open the lootbox?</AccordionTrigger>
                         <AccordionContent>
-                            Yes. It adheres to the WAI-ARIA design pattern.
+                            Once you have minted your keys, you can open the lootbox by clicking on the open button.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
                         <AccordionTrigger>Where can I find my rewards?</AccordionTrigger>
                         <AccordionContent>
-                            Yes. It comes with default styles that matches the other
-                            components&apos; aesthetic.
+                            You can find your rewards in the rewards section.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
                         <AccordionTrigger>What can I do with keys</AccordionTrigger>
                         <AccordionContent>
-                            Yes. It`s animated by default, but you can disable it if you prefer.
+                            Keys are used to open the lootbox and claim your rewards.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-4">
                         <AccordionTrigger>Who can I contact about support?</AccordionTrigger>
                         <AccordionContent>
-                            Yes. It`s animated by default, but you can disable it if you prefer.
+                            You can contact us on our discord channel.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
