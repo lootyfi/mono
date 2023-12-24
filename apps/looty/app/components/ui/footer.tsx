@@ -18,7 +18,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className='flex items-center gap-4 justify-center'>
-                        <Link href={'https://twitter.com/looty_fi'} target='_blank' className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
+                        <Link href={'https://discord.gg/J7pdDQkPY3'} target='_blank' className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
                             <DiscordIcon className='cursor-pointer' />
                         </Link>
                         <Link href={'https://twitter.com/looty_fi'} target='_blank' className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>

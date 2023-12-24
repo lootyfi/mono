@@ -74,10 +74,10 @@ const MobileNavigation = () => {
                             </Link>
                         </div>
                         <div className='flex justify-start items-center gap-8 py-24'>
-                            <Link href={'/'} className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
+                            <Link href={'https://discord.gg/J7pdDQkPY3'} className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
                                 <DiscordIcon className="flex w-full h-full" />
                             </Link>
-                            <Link href={'/'} className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
+                            <Link href={'/https://twitter.com/looty_fi'} className={`relative w-fit  text-[18px] text-center tracking-[0] leading-[normal]`}>
                                 <XIcon className='cursor-pointer' />
                             </Link>
                         </div>

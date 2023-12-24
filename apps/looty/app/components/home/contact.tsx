@@ -19,7 +19,7 @@ export const Contact = () => {
                     <h3 className="text-[35px] leading-[2rem] lg:text-[55px] lg:leading-[5rem] text-white">Still have questions?</h3>
                     <p className="text-[21px]  text-[#D7CCE0] text-left font-normal">Contact us in our Discord.</p>
                 </div>
-                <Link href={'https://twitter.com/looty_fi'} target='_blank' className="text-white z-20 text-[18px] font-bold bg-gradient-to-r from-[#D630FF] to-[#B130FF] hover:outline outline-4 outline-white rounded-2xl px-10 py-5"
+                <Link href={'https://discord.gg/J7pdDQkPY3'} target='_blank' className="text-white z-20 text-[18px] font-bold bg-gradient-to-r from-[#D630FF] to-[#B130FF] hover:outline outline-4 outline-white rounded-2xl px-10 py-5"
                 >
                     <div className="flex items-center gap-2">
                         <DiscordIcon className="z-20" /> Discord

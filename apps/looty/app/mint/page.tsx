@@ -2,6 +2,7 @@ import React, { Suspense, use } from 'react'
 import MintContent from '../components/mint'
 import { Projects } from '../lib/interface'
 import { redirect } from 'next/navigation'
+import { headers } from 'next/headers';
 
 // import Table from '../components/tables'
 
@@ -112,7 +113,17 @@ async function getData(): Promise<Projects[]> {
 
 
 export default function Page() {
-    redirect('/coming-soon')
+    const headersList = headers();
+    const fullUrl = headersList.get('referer') || "";
+
+    console.log(fullUrl);
+    // regex to get the last part of the url
+    //    if route is coming soon then not need to redirect
+    //    else redirect to coming soon page
+    const url = fullUrl.split('/').pop();
+    console.log(url);
+
+    if (url !== 'coming-soon') redirect('/coming-soon')
     const data = use(getData());
 
 
