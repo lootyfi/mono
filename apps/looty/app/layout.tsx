@@ -38,14 +38,13 @@ export default function RootLayout({
     <html lang="en" className={`${adlamFont.className} scroll-smooth`} style={{
       fontFamily: openSans.style.fontFamily,
     }}>
-      <meta property="og:image" content="<generated>" />
-      <meta property="og:image:type" content="<generated>" />
-      <meta property="og:image:width" content="<generated>" />
-      <meta property="og:image:height" content="<generated>" />
-      <meta name="twitter:image" content="<generated>" />
-      <meta name="twitter:image:type" content="<generated>" />
-      <meta name="twitter:image:width" content="<generated>" />
-      <meta name="twitter:image:height" content="<generated>" />
+      <head>
+        <meta property="og:image" content="https://ik.imagekit.io/nqz2h82e3/Group%20266.png?updatedAt=1702045973913" />
+        <meta property="og:image:type" content="<generated>" />
+        <meta property="og:image:width" content="<generated>" />
+        <meta property="og:image:height" content="<generated>" />
+
+      </head>
       {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet" /> */}
