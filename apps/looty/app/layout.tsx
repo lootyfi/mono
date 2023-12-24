@@ -39,7 +39,7 @@ export default function RootLayout({
       fontFamily: openSans.style.fontFamily,
     }}>
       <head>
-        <meta property="og:image" content="https://ik.imagekit.io/nqz2h82e3/Group%20266.png?updatedAt=1702045973913" />
+        <meta property="og:image" content="https://ik.imagekit.io/nqz2h82e3/Homepage%201.png?updatedAt=1703452393465" />
         <meta property="og:image:type" content="<generated>" />
         <meta property="og:image:width" content="<generated>" />
         <meta property="og:image:height" content="<generated>" />
