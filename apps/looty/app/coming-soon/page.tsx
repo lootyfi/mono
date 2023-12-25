@@ -11,7 +11,7 @@ function Comingsoon() {
                 <div className='flex items-start justify-start'>
                     <h1 className='flex items-baseline justify-center flex-wrap text-center text-[45px] lg:text-[70px] text-white'>
                         We are coming
-                        <span className='text-[#B73FFF]'>soon</span>
+                        <span className='text-[#B73FFF]'> soon</span>
                         <div className="progress"></div>
                         <div className="progress"></div>
                         <div className="progress"></div>
