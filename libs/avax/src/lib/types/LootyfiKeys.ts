@@ -37,12 +37,12 @@ export interface KeysMethodPayableReturnContext {
   send(options: KeysSendOptions): PromiEvent<TransactionReceipt>;
   send(
     options: KeysSendOptions,
-    callback: (error: Error, result: any) => void
+    callback: (error: Error, result: unknown) => void
   ): PromiEvent<TransactionReceipt>;
   estimateGas(options: KeysEstimateGasOptions): Promise<number>;
   estimateGas(
     options: KeysEstimateGasOptions,
-    callback: (error: Error, result: any) => void
+    callback: (error: Error, result: unknown) => void
   ): Promise<number>;
   encodeABI(): string;
 }
@@ -102,7 +102,8 @@ export interface LootyfiKeysEventsContext {
   ): EventResponse;
   BatchMetadataUpdate(
     parameters: {
-      filter?: {};
+      // filter?: {};
+      filter?: unknown
       fromBlock?: number;
       toBlock?: 'latest' | number;
       topics?: string[];
@@ -111,7 +112,8 @@ export interface LootyfiKeysEventsContext {
   ): EventResponse;
   KeyMinted(
     parameters: {
-      filter?: {};
+      // filter?: {};
+      filter?: unknown
       fromBlock?: number;
       toBlock?: 'latest' | number;
       topics?: string[];
@@ -120,7 +122,8 @@ export interface LootyfiKeysEventsContext {
   ): EventResponse;
   MetadataUpdate(
     parameters: {
-      filter?: {};
+      // filter?: {};
+      filter?: unknown
       fromBlock?: number;
       toBlock?: 'latest' | number;
       topics?: string[];
