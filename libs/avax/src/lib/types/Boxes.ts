@@ -1,5 +1,6 @@
 import BN from 'bn.js';
 import BigNumber from 'bignumber.js';
+
 import {
   PromiEvent,
   TransactionReceipt,
@@ -31,12 +32,12 @@ export interface MethodPayableReturnContext {
   send(options: SendOptions): PromiEvent<TransactionReceipt>;
   send(
     options: SendOptions,
-    callback: (error: Error, result: any) => void
+    callback: (error: Error, result: unknown) => void
   ): PromiEvent<TransactionReceipt>;
   estimateGas(options: BoxesEstimateGasOptions): Promise<number>;
   estimateGas(
     options: BoxesEstimateGasOptions,
-    callback: (error: Error, result: any) => void
+    callback: (error: Error, result: unknown) => void
   ): Promise<number>;
   encodeABI(): string;
 }
@@ -67,7 +68,7 @@ export type BoxesEvents = 'OwnershipTransferred' | 'BoxOpened';
 export interface BoxesEventsContext {
   BoxOpened(
     parameters: {
-      filter?: {};
+      filter?: unknown;
       fromBlock?: number;
       toBlock?: 'latest' | number;
       topics?: string[];

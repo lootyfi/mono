@@ -1,12 +1,13 @@
+
 import {
   Injectable,
   Logger,
   NotFoundException,
   OnModuleInit,
 } from '@nestjs/common';
-import { getKeysContract, mintLootyKey } from '@org/avax';
 import { ProjectService } from '../project/project.service';
 import { BaseContract } from 'ethers';
+import { getKeysContract, mintLootyKey } from '@org/avax';
 
 @Injectable()
 export class AvalancheService implements OnModuleInit {

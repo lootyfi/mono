@@ -1,15 +1,18 @@
 import {
-  Body,
+  // Body,
   Controller,
   Get,
-  Post,
+  // Post,
+  // Res,
   Req,
-  Res,
   UseGuards,
 } from '@nestjs/common';
 
 import { UserService } from './user.service';
-import { Request, Response } from 'express';
+import {
+  Request,
+  // Response
+} from 'express';
 import { AuthGuard } from '../guards/auth.guard';
 @Controller('user')
 export class UserController {
