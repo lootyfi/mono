@@ -1,11 +1,12 @@
 import { StaticImageData } from "next/image"
 
 export interface MintProps {
-    data?: Projects[]
+    data?: IProject[]
 }
-export type Projects = {
+export type IProject = {
     organizationId: string
     id: string
+    name: string
     projectName: string
     image: string | StaticImageData
     rewardsNumber: string

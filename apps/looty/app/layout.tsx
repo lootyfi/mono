@@ -4,7 +4,7 @@ import Footer from './components/ui/footer';
 import './global.css';
 import { Navbar } from './components/ui/navbar';
 import localFont from 'next/font/local';
-import Provider from './contexts/clientProvider';
+// import Provider from './contexts/clientProvider';
 // import { SessionProvider } from "next-auth/react"
 
 
@@ -35,10 +35,10 @@ const openSans = localFont({
 
 export default function RootLayout({
   children,
-  session,
+  // session,
 }: {
   children: React.ReactNode;
-  session: any;
+  // session: any;
 }) {
 
   return (
@@ -51,13 +51,13 @@ export default function RootLayout({
       {/* <WalletWrapper> */}
       {/* <EthWalletWrapper> */}
       <body className='relative flex flex-col h-full w-full'>
-        <Provider session={session}>
-          <div className='min-h-screen'>
-            <Navbar />
-            {children}
-          </div>
-          <Footer />
-        </Provider>
+        {/* <Provider session={session}> */}
+        <div className='min-h-screen'>
+          <Navbar />
+          {children}
+        </div>
+        <Footer />
+        {/* </Provider> */}
         {/* </SessionProvider> */}
       </body>
       {/* </EthWalletWrapper> */}

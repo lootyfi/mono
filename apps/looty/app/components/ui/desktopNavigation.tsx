@@ -2,44 +2,44 @@
 import React from "react";
 import Link from "next/link";
 import LogoIcon from "../../icons/LogoIcon";
-import { usePathname, useRouter } from 'next/navigation'
-import { signIn, signOut, useSession } from "next-auth/react"
-import { ethers } from "ethers";
-import dayjs from "dayjs";
+import { usePathname } from 'next/navigation'
+import { signIn, signOut } from "next-auth/react"
+// import { ethers } from "ethers";
+// import dayjs from "dayjs";
 // import { useSession } from "next-auth/react";
 // import { useRouter } from 'next/navigation'
 
 
 // import { signOut, useSession } from "next-auth/react";
-async function onSignInWithCrypto() {
-    try {
-        if (!window.ethereum) {
-            window.alert("Please install MetaMask first.");
-            return;
-        }
+// async function onSignInWithCrypto() {
+//     try {
+//         if (!window.ethereum) {
+//             window.alert("Please install MetaMask first.");
+//             return;
+//         }
 
-        // Get the wallet provider, the signer and address
-        const provider = new ethers.BrowserProvider(window.ethereum);
-        const signer = await provider.getSigner();
-        const publicAddress = await signer.getAddress();
+//         // Get the wallet provider, the signer and address
+//         const provider = new ethers.BrowserProvider(window.ethereum);
+//         const signer = await provider.getSigner();
+//         const publicAddress = await signer.getAddress();
 
-        // Sign the received nonce
-        const signedNonce = await signer.signMessage(dayjs().unix().toString());
+//         // Sign the received nonce
+//         const signedNonce = await signer.signMessage(dayjs().unix().toString());
 
-        // Use NextAuth to sign in with our address and the nonce
-        await signIn("crypto", {
-            publicAddress,
-            signedNonce,
-            callbackUrl: "/mint",
-        });
-    } catch {
-        window.alert("Error with signing, please try again.");
-    }
-}
+//         // Use NextAuth to sign in with our address and the nonce
+//         await signIn("crypto", {
+//             publicAddress,
+//             signedNonce,
+//             callbackUrl: "/mint",
+//         });
+//     } catch {
+//         window.alert("Error with signing, please try again.");
+//     }
+// }
 
 
 export const DesktopNavigation = () => {
-    const router = useRouter();
+    // const router = useRouter();
     const pathName = usePathname();
     // const { status } = useSession({
     //     required: true,
@@ -50,12 +50,10 @@ export const DesktopNavigation = () => {
 
     // if (status !== "authenticated") return null;
 
-    const { status, data } = useSession({
-        required: true,
-    });
+    // const { status, data } = useSession({
+    //     required: true,
+    // });
 
-    console.log(status, 'status');
-    console.log(data, 'data');
 
 
 
@@ -115,7 +113,8 @@ export const DesktopNavigation = () => {
                             {/* <Link href={'/api/auth/callback/twitter'} className="flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
                                 Connect wallet
                             </Link> */}
-                            {status ?
+                            {/* {status ? */}
+                            {true ?
                                 <span className="flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
                                     <button onClick={() => signOut()}>Log out</button>
                                 </span>

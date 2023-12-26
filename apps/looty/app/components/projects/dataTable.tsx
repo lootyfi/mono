@@ -7,12 +7,13 @@ import {
     useReactTable,
 } from "@tanstack/react-table"
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "../ui/table"
+import { IProject } from "../../lib/interface"
 
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
     data: TData[] | []
-    onRowClick?: (row: unknown) => void
+    onRowClick?: (row: IProject) => void
 }
 
 export function DataTable<TData, TValue>({
@@ -54,7 +55,7 @@ export function DataTable<TData, TValue>({
                                 key={row.id}
                                 data-state={row.getIsSelected() && "selected"}
                                 className="hover:bg-[#201935] border border-separate"
-                                onClick={() => onRowClick && onRowClick(row)}
+                                onClick={() => onRowClick && onRowClick(row.original as IProject)}
                             >
                                 {
                                     row.getVisibleCells().map((cell) => (

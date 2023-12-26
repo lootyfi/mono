@@ -3,15 +3,16 @@ import React, { Suspense } from 'react'
 import { Skeleton } from './ui/skeleton'
 import { columns } from './projects/columns'
 import { DataTable } from './projects/dataTable'
-import { Drawer, DrawerDirection } from './ui/drawer'
-import { Projects } from '../lib/interface'
+import { IProject } from '../lib/interface'
+import { useRouter } from "next/navigation";
 
 
-export function MintContent({ projectsData }: { projectsData: Projects[] }): JSX.Element {
-    const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+export function MintContent({ projectsData }: { projectsData: IProject[] }): JSX.Element {
+    const router = useRouter();
 
-    const onRowClick = (row: unknown) => {
-        setIsDrawerOpen(!isDrawerOpen)
+    const onRowClick = (row: IProject) => {
+        // eslint-disable-next-line
+        router.push(`mint/${row?.name}`)
     }
 
     return (
@@ -19,9 +20,6 @@ export function MintContent({ projectsData }: { projectsData: Projects[] }): JSX
             <Suspense fallback={<Skeleton />}>
                 <DataTable columns={columns} data={projectsData} onRowClick={(row) => onRowClick(row)} />
             </Suspense>
-            <Drawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} direction={DrawerDirection.Left}>
-                <span>drawer</span>
-            </Drawer>
         </div>
     )
 }
