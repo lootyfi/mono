@@ -10,7 +10,7 @@ function Comingsoon() {
             <div className='flex flex-col w-full h-full justify-center items-center px-8 lg:px-0 gap-4'>
                 <div className='flex items-start justify-start'>
                     <h1 className='flex items-baseline justify-center flex-wrap text-center text-[45px] lg:text-[70px] text-white'>
-                        We are coming
+                        We are coming&nbsp;
                         <span className='text-[#B73FFF]'>soon</span>
                         <div className="progress"></div>
                         <div className="progress"></div>
