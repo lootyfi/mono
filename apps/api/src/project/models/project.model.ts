@@ -1,4 +1,4 @@
-import { Schema, Prop } from '@nestjs/mongoose';
+import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
 import { Schema as MongooseSchema } from 'mongoose';
 
 @Schema()
@@ -16,3 +16,5 @@ export class Project {
   @Prop()
   boxesContractAddress: string;
 }
+
+export const ProjectSchema = SchemaFactory.createForClass(Project);
