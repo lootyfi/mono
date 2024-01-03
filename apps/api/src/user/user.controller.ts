@@ -25,4 +25,13 @@ export class UserController {
 
     return { message: 'success' };
   }
+
+  @Get('/me')
+  // @UseGuards(AuthGuard)
+  async me(@Req() request: Request) {
+    const { wallet } = request['user'];
+    console.log("wallet", wallet);
+    
+    return await this.userService.findOneByWallet(wallet);
+  }
 }

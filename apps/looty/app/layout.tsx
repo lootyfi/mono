@@ -1,11 +1,9 @@
 import Footer from './components/ui/footer';
-// import EthWalletWrapper from './connections/EthWalletWrapper';
-// import WalletWrapper from './connections/WalletWrapper';
+
 import './global.css';
 import { Navbar } from './components/ui/navbar';
 import localFont from 'next/font/local';
-// import Provider from './contexts/clientProvider';
-// import { SessionProvider } from "next-auth/react"
+import Providers from './_providers/providers'
 
 
 import GoogleAnalytics from './components/GoogleAnalytics';
@@ -51,22 +49,19 @@ export default function RootLayout({
         <meta property="og:image:width" content="<generated>" />
         <meta property="og:image:height" content="<generated>" />
       </head>
-      {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap" rel="stylesheet" /> */}
       {/* <WalletWrapper> */}
       {/* <EthWalletWrapper> */}
-      <body className='relative flex flex-col h-full'>
-        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
-          <GoogleAnalytics ga_id=
-            {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string} />
-        ) : null}
-        <Navbar />
-        {children}
+      <Providers>
+        <body className='relative flex flex-col h-full'>
+          {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+            <GoogleAnalytics ga_id=
+              {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string} />
+          ) : null}
+          <Navbar />
+          {children}
+        </body>
         <Footer />
-        {/* </Provider> */}
-        {/* </SessionProvider> */}
-      </body>
+      </Providers>
       {/* </EthWalletWrapper> */}
       {/* </WalletWrapper> */}
     </html>

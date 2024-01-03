@@ -27,6 +27,9 @@ export class AuthService {
   ) {}
   private async signIn(wallet: string) {
     const payload = { wallet, loggedAt: dayjs().unix(), role: UserRole.User };
+    console.log("payload", payload);
+    console.log("this.configService.get('JWT_SECRET')", this.configService.get('JWT_SECRET'));
+    
 
     return {
       access_token: await this.jwtService.signAsync(payload, {
@@ -66,21 +69,28 @@ export class AuthService {
     }
   }
 
-  async authenticate(signature: string, wallet: string, unixTimestamp: number) {
-    const isValidSignature = this.sharedService.verifySignedMessage(
-      `${SIGN_MESSAGE}${wallet}: ${unixTimestamp}`,
-      signature,
-      wallet
+  async authenticate(wallet: string, message: string, signMessage: string, nonce: string, unixTimestamp: number) {  
+    const isValidSignature = await this.sharedService.verifySignedMessage(
+      message,
+      signMessage,
+      nonce
     );
 
-    if (!isValidSignature)
-      throw new UnauthorizedException('Failed to verify wallet ownership!');
+    console.log("isValidSignature", isValidSignature);
+    console.log("unixTimestamp", unixTimestamp);
+    
+    
 
-    if (dayjs().diff(dayjs(unixTimestamp), 'seconds') > 60) {
-      throw new UnauthorizedException();
-    }
+    if (!isValidSignature)
+      throw new UnauthorizedException('Failed to verify wallet ownership!');    
+    
+    // if (dayjs().diff(dayjs(unixTimestamp), 'seconds') > 60) {
+    //   throw new UnauthorizedException();
+    // }
 
     const tokens = await this.signIn(wallet);
+    console.log("tokens", tokens);
+    
     const user: User = new this.model({
       refreshToken: tokens.refresh_token,
       wallet,
@@ -91,21 +101,41 @@ export class AuthService {
     return { tokens, savedUser };
   }
 
-  async login(wallet: string, signature: string, unixTimestamp: number) {
+  async login(wallet: string, message: string, signMessage: string, nonce: string, unixTimestamp: number) {
     try {
+      console.log('eee');
+      console.log("wallet", wallet);
+      console.log("message", message);
+      console.log("signMessage", signMessage);
+      console.log("nonce", nonce);
+      console.log("unixTimestamp", unixTimestamp);
+      
+      
+      
       const user = await this.model.findOne({ wallet });
-      if (!user) return new NotFoundException('User does not exist!');
+      console.log("wallet", user);
+      console.log("message", message);
+      
+      
+      console.log("user", user);
+      if (!user) return await this.authenticate(wallet, message, signMessage, nonce, unixTimestamp);
 
-      const isValidSignature = this.sharedService.verifySignedMessage(
-        `${SIGN_MESSAGE}${wallet}: ${unixTimestamp}`,
-        signature,
-        wallet
+      
+      const isValidSignature = await this.sharedService.verifySignedMessage(
+        message,
+        signMessage,
+        nonce,
       );
+      console.log("isValidSignature", isValidSignature);
 
       if (!isValidSignature)
         return new UnauthorizedException('Failed to verify wallet ownership!');
+      console.log("unixTimestamp", unixTimestamp);
+      
+      
 
-      return this.signIn(wallet);
+      const tokens = await this.signIn(wallet);
+      return { tokens, user };
     } catch (error) {
       throw new UnauthorizedException();
     }

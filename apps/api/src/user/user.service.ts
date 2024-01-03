@@ -17,5 +17,11 @@ export class UserService {
     @InjectModel(User.name) private userModel: Model<User>,
     private readonly sharedService: SharedService,
     private readonly authService: AuthService
-  ) {}
+  ) { }
+  
+  async findOneByWallet(wallet: string) {
+    console.log("wallet", wallet);
+    
+    return this.userModel.findOne({ wallet });
+  }
 }
