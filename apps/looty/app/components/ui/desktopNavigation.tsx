@@ -17,8 +17,6 @@ export const DesktopNavigation = () => {
     const { open } = useWeb3Modal();
     const { signMessageAsync } = useSignMessage();
 
-    // if (status !== "authenticated") return null;
-
     const { status } = useSession({
         required: false,
     });
@@ -77,13 +75,8 @@ export const DesktopNavigation = () => {
     }
 
     const handleSignOut = async () => {
-        // remove cookies
         await signOut({ callbackUrl: "/" });
-    }
-
-
-    // This function requests a nonce then signs it, proving that
-    //  the user owns the public address they are using
+    };
 
     return (
         <div className="fixed w-full flex bg-[#1B142E] z-40">

@@ -27,7 +27,6 @@ export const OPTIONS: NextAuthOptions = {
             }),
           });
           const data = await response.json();
-          console.log("data", data.tokens.access_token);
           
           if (data.tokens.access_token) {
             return data;
@@ -41,17 +40,11 @@ export const OPTIONS: NextAuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
     async session({ session, token }: { session: any; token: any }) {
-      console.log("session", session);
-      console.log("token", token);
-      
       session.user.address = token.sub;
       session.user.token = token;
       return session;
     },
   },
-  // pages: {
-  //   signIn:"/auth"
-  // },
 };
 
 const handler = NextAuth(OPTIONS);

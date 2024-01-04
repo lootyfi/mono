@@ -13,7 +13,6 @@ export default async function HomePage() {
    */
   return (
     <div className='relative flex flex-col w-full items-center justify-center overflow-y-auto overflow-x-hidden gap-8'>
-
       <Hero />
       <Partners />
       <Features />

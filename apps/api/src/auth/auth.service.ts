@@ -2,7 +2,6 @@ import {
   BadRequestException,
   // Body,
   Injectable,
-  NotFoundException,
   // Post,
   // Res,
   UnauthorizedException,
@@ -15,7 +14,7 @@ import { Model } from 'mongoose';
 import { User, UserRole } from '../user/model/user.model';
 
 import { SharedService } from '../shared/shared.service';
-import { SIGN_MESSAGE } from '../utils/constants';
+// import { SIGN_MESSAGE } from '../utils/constants';
 
 @Injectable()
 export class AuthService {
@@ -75,22 +74,16 @@ export class AuthService {
       signMessage,
       nonce
     );
-
-    console.log("isValidSignature", isValidSignature);
-    console.log("unixTimestamp", unixTimestamp);
-    
-    
+        
 
     if (!isValidSignature)
       throw new UnauthorizedException('Failed to verify wallet ownership!');    
     
-    // if (dayjs().diff(dayjs(unixTimestamp), 'seconds') > 60) {
-    //   throw new UnauthorizedException();
-    // }
+    if (dayjs().diff(dayjs(unixTimestamp), 'seconds') > 60) {
+      throw new UnauthorizedException();
+    }
 
-    const tokens = await this.signIn(wallet);
-    console.log("tokens", tokens);
-    
+    const tokens = await this.signIn(wallet);    
     const user: User = new this.model({
       refreshToken: tokens.refresh_token,
       wallet,
@@ -102,22 +95,9 @@ export class AuthService {
   }
 
   async login(wallet: string, message: string, signMessage: string, nonce: string, unixTimestamp: number) {
-    try {
-      console.log('eee');
-      console.log("wallet", wallet);
-      console.log("message", message);
-      console.log("signMessage", signMessage);
-      console.log("nonce", nonce);
-      console.log("unixTimestamp", unixTimestamp);
-      
-      
-      
+    try {    
       const user = await this.model.findOne({ wallet });
-      console.log("wallet", user);
-      console.log("message", message);
-      
-      
-      console.log("user", user);
+
       if (!user) return await this.authenticate(wallet, message, signMessage, nonce, unixTimestamp);
 
       
@@ -126,12 +106,9 @@ export class AuthService {
         signMessage,
         nonce,
       );
-      console.log("isValidSignature", isValidSignature);
 
       if (!isValidSignature)
-        return new UnauthorizedException('Failed to verify wallet ownership!');
-      console.log("unixTimestamp", unixTimestamp);
-      
+        return new UnauthorizedException('Failed to verify wallet ownership!');      
       
 
       const tokens = await this.signIn(wallet);

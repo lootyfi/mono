@@ -35,14 +35,7 @@ export class AuthController {
     );
 
     response.cookie('access_token', tokens.access_token);
-    response.cookie('refresh_token', tokens.refresh_token);
-
-    console.log("savedUser", savedUser);
-    console.log("tokens", tokens);
-    console.log("response", response);
-    
-    
-    
+    response.cookie('refresh_token', tokens.refresh_token);  
 
     return response
       .status(200)

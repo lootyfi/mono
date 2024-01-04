@@ -33,10 +33,8 @@ const openSans = localFont({
 
 export default function RootLayout({
   children,
-  // session,
 }: {
   children: React.ReactNode;
-  // session: any;
 }) {
 
   return (
@@ -59,6 +57,7 @@ export default function RootLayout({
           ) : null}
           <Navbar />
           {children}
+
         </body>
         <Footer />
       </Providers>
