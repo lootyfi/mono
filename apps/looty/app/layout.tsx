@@ -57,7 +57,9 @@ export default function RootLayout({
         ) : null}
         <Providers>
           <Navbar />
-          {children}
+          <div className='relative flex flex-col h-full w-full min-h-screen'>
+            {children}
+          </div>
           <Footer />
         </Providers>
       </body>

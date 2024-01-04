@@ -10,6 +10,7 @@ import { useWeb3Modal } from "@web3modal/react";
 import { avalanche } from "viem/chains";
 
 import dayjs from "dayjs";
+import XIcon from "../../icons/XIcon";
 
 export const DesktopNavigation = () => {
     const pathName = usePathname();
@@ -17,9 +18,13 @@ export const DesktopNavigation = () => {
     const { open } = useWeb3Modal();
     const { signMessageAsync } = useSignMessage();
 
-    const { status } = useSession({
+    const { status, data } = useSession({
         required: false,
     });
+
+    console.log("status", status);
+    console.log("data", data);
+
 
     const handleSign = async () => {
         if (!isConnected) open();
@@ -65,6 +70,10 @@ export const DesktopNavigation = () => {
         }
     };
 
+    const handleSignOut = async () => {
+        await signOut({ callbackUrl: "/" });
+    };
+
 
     const highlightNavLinks = (path: string) => {
         if (pathName === path) {
@@ -74,9 +83,7 @@ export const DesktopNavigation = () => {
         }
     }
 
-    const handleSignOut = async () => {
-        await signOut({ callbackUrl: "/" });
-    };
+
 
     return (
         <div className="fixed w-full flex bg-[#1B142E] z-40">
@@ -104,34 +111,33 @@ export const DesktopNavigation = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className='flex items-center justify-end'>
-                        {/* <div className="flex w-full border border-[#B73FFF] rounded-3xl"> */}
-                        {/* <WalletMultiButtonDynamic /> */}
-                        {/* <ConnectWallet
-                                    theme={darkTheme({
-                                        colors: {
-                                            accentText: "#B73FFF",
-                                            accentButtonBg: "#B73FFF",
-                                        },
-                                    })}
-                                    modalSize={"wide"}
-                                    welcomeScreen={{ title: "Welcome to Looty", subtitle: "Connect your wallet to continue", img: { src: 'https://ik.imagekit.io/nqz2h82e3/Group%20266.png?updatedAt=1702045973913', width: 100 }, }}
-                                    modalTitleIconUrl={""}
-                                /> */}
-                        {/* <Link href={'/api/auth/callback/twitter'} className="flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
-                                Connect wallet
-                            </Link> */}
+                    {/* todo move to separate component */}
+                    <div className='flex items-center justify-end gap-4'>
+                        {data?.user?.name ?
+                            <div
+                                className="flex w-fit gap-2 h-fit px-8 justify-center items-center py-1.5 border rounded-xl border-[#D7CCE0] text-[#FAFAFA] whitespace-nowrap">
+                                <XIcon className='flex w-4 h-4' /> {data?.user?.name}
+                            </div>
+                            :
+                            <button
+                                onClick={() => signIn('twitter')}
+                                className="flex w-fit gap-2 h-fit px-8 justify-center items-center py-1.5 border rounded-xl border-[#D7CCE0] text-[#FAFAFA] whitespace-nowrap">
+                                Connect <XIcon className='flex w-4 h-4' />
+                            </button>
+
+                        }
                         {status === 'authenticated' ?
-                            <span className="flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
-                                {address?.slice(0, 6)}...{address?.slice(-4)}
-                                {/* divider div */}
-                                <div className="w-[1px] h-[20px] bg-[#FAFAFA] mx-[10px]"></div>
-                                <button onClick={() => handleSignOut()}>Log out</button>
-                            </span>
+                            <div>
+                                <span className="flex w-fit h-fit px-8 justify-center items-center py-1.5 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
+                                    {address?.slice(0, 6)}...{address?.slice(-4)}
+                                    <div className="w-[1px] h-[20px] bg-[#FAFAFA] mx-[10px]"></div>
+                                    <button onClick={() => handleSignOut()}>Log out</button>
+                                </span>
+                            </div>
                             :
                             <button
                                 onClick={() => handleSign()}
-                                className="flex w-fit h-fit px-8 justify-center items-center py-3 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
+                                className="flex w-fit h-fit px-8 justify-center items-center py-1.5 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
                                 Connect wallet
                             </button>
                         }
@@ -140,7 +146,7 @@ export const DesktopNavigation = () => {
                 </div>
             </div>
             {/* divider line */}
-            <div className="absolute w-full h-[4px] bg-[#201935] top-[95px]"></div>
+            <div className="absolute w-full h-[4px] bg-[#201935] top-[85px]"></div>
         </div >
     );
 };

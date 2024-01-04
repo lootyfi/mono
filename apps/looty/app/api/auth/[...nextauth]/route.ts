@@ -1,7 +1,7 @@
 import { NextAuthOptions } from "next-auth";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
-
+import TwitterProvider from "next-auth/providers/twitter";
 export const OPTIONS: NextAuthOptions = {
     providers: [
       CredentialsProvider({
@@ -33,7 +33,12 @@ export const OPTIONS: NextAuthOptions = {
           }
           return null;
         }
-    }),
+      }),
+    TwitterProvider({
+    clientId: process.env.TWITTER_CLIENT_ID as string,
+    clientSecret: process.env.TWITTER_CLIENT_SECRET as string,
+     version: "2.0", // opt-in to Twitter OAuth 2.0
+  })
   ],
   session: { strategy: "jwt" },
 
