@@ -16,6 +16,7 @@ type WagmiProviderType = {
 
 const chains = [avalanche, avalancheFuji];
 
+// todo move to env
 const projectId = '94aa7153045680866a0e1d95670ce009'
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);

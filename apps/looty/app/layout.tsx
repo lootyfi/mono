@@ -49,18 +49,18 @@ export default function RootLayout({
       </head>
       {/* <WalletWrapper> */}
       {/* <EthWalletWrapper> */}
-      <Providers>
-        <body className='relative flex flex-col h-full'>
-          {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
-            <GoogleAnalytics ga_id=
-              {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string} />
-          ) : null}
+
+      <body className='relative flex flex-col h-full'>
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleAnalytics ga_id=
+            {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS as string} />
+        ) : null}
+        <Providers>
           <Navbar />
           {children}
-
-        </body>
-        <Footer />
-      </Providers>
+          <Footer />
+        </Providers>
+      </body>
       {/* </EthWalletWrapper> */}
       {/* </WalletWrapper> */}
     </html>
