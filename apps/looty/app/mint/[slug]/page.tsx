@@ -1,10 +1,32 @@
+import { use } from "react";
+import { IProject } from "../../lib/interface";
+import ProjectMint from "../../components/project-mint/projectMint";
+
 export default function Page({ params }: { params: { slug: string } }) {
-    return <div className='flex w-full'>
-        <div className='flex flex-col w-full justify-center mt-32 mx-auto max-w-7xl text-center'>
-            <h1 className='text-[70px] text-white '>Your <span className='text-[#B73FFF]'>{params.slug}</span></h1>
-            <p className='flex font-sans text-[#D7CCE0] w-full justify-center mt-4'>
-                You can find all your rewards on this page.
-            </p>
-        </div>
-    </div>
+    console.log(params, 'params');
+
+
+    async function getData(): Promise<IProject | undefined> {
+        try {
+            const response = await fetch(`http://localhost:3000/api/project/get/${params.slug}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+
+            });
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.log(error);
+            return undefined
+        }
+    }
+
+    const data = use(getData());
+    console.log(data?.mintConfig, 'data?.mintConfig');
+
+    return (
+        <ProjectMint data={data!} />
+    )
 }

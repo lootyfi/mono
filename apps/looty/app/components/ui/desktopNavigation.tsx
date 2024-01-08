@@ -11,6 +11,7 @@ import { avalanche } from "viem/chains";
 
 import dayjs from "dayjs";
 import XIcon from "../../icons/XIcon";
+import Image from "next/image";
 
 export const DesktopNavigation = () => {
     const pathName = usePathname();
@@ -87,7 +88,7 @@ export const DesktopNavigation = () => {
 
     return (
         <div className="fixed w-full flex bg-[#1B142E] z-40">
-            <div className="flex w-full items-center justify-center my-6">
+            <div className="flex w-full items-center justify-center my-3">
                 <div className="flex w-full max-w-7xl">
                     <div className="flex w-full">
                         <div className='flex justify-start mr-[70px] items-center'>
@@ -113,22 +114,10 @@ export const DesktopNavigation = () => {
                     </div>
                     {/* todo move to separate component */}
                     <div className='flex items-center justify-end gap-4'>
-                        {data?.user?.name ?
-                            <div
-                                className="flex w-fit gap-2 h-fit px-8 justify-center items-center py-1.5 border rounded-xl border-[#D7CCE0] text-[#FAFAFA] whitespace-nowrap">
-                                <XIcon className='flex w-4 h-4' /> {data?.user?.name}
-                            </div>
-                            :
-                            <button
-                                onClick={() => signIn('twitter')}
-                                className="flex w-fit gap-2 h-fit px-8 justify-center items-center py-1.5 border rounded-xl border-[#D7CCE0] text-[#FAFAFA] whitespace-nowrap">
-                                Connect <XIcon className='flex w-4 h-4' />
-                            </button>
 
-                        }
                         {status === 'authenticated' ?
                             <div>
-                                <span className="flex w-fit h-fit px-8 justify-center items-center py-1.5 border rounded-xl border-[#B73FFF] text-[#FAFAFA] whitespace-nowrap">
+                                <span className="flex w-fit h-fit px-8 justify-center items-center py-1.5 rounded-xl bg-[#2A2144] text-[#FAFAFA] whitespace-nowrap">
                                     {address?.slice(0, 6)}...{address?.slice(-4)}
                                     <div className="w-[1px] h-[20px] bg-[#FAFAFA] mx-[10px]"></div>
                                     <button onClick={() => handleSignOut()}>Log out</button>
@@ -141,12 +130,26 @@ export const DesktopNavigation = () => {
                                 Connect wallet
                             </button>
                         }
+                        {data?.user?.name && data?.user.image ?
+                            <div
+                                className="flex w-fit gap-2 h-fit px-8 justify-center items-center py-1.5 rounded-xl text-[#FAFAFA] whitespace-nowrap">
+                                <span>{data?.user?.name}</span>
+                                <Image src={data?.user?.image} width={32} height={32} alt="test" className="rounded-lg " />
+                            </div>
+                            :
+                            <button
+                                onClick={() => signIn('twitter')}
+                                className="flex w-fit gap-2 h-fit px-8 justify-center items-center py-1.5 border rounded-xl border-[#D7CCE0] text-[#FAFAFA] whitespace-nowrap">
+                                Connect <XIcon className='flex w-4 h-4' />
+                            </button>
+
+                        }
 
                     </div>
                 </div>
             </div>
             {/* divider line */}
-            <div className="absolute w-full h-[4px] bg-[#201935] top-[85px]"></div>
+            <div className="absolute w-full h-[4px] bg-[#201935] top-[60px]"></div>
         </div >
     );
 };

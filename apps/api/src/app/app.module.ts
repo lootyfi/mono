@@ -7,6 +7,7 @@ import { ProjectModule } from '../project/project.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
+import { OrganizationModule } from '../organization/organization.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { MongooseModule } from '@nestjs/mongoose';
     UserModule,
     AuthModule,
     ProjectModule,
+    OrganizationModule,
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],

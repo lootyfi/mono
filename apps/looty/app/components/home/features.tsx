@@ -16,7 +16,7 @@ export default async function Features() {
                 width={300}
                 alt="Light"
             />
-            <div className='flex flex-col w-full mx-auto max-w-7xl items-center justify-center gap-12 mt-12 lg:mt-32 px-8 lg:px-0'>
+            <div className='flex flex-col w-full mx-auto max-w-7xl items-center justify-center gap-12 mt-12 lg:mt-24 px-8 lg:px-0'>
                 <h3 className="text-[35px] lg:text-[55px] lg:leading-[5rem] text-white text-center lg:text-start">It`s super easy to <b className="text-[#B73FFF]">get rewards</b>!</h3>
                 <div className="flex gap-10 flex-col lg:flex-row text-center w-full items-center justify-center h-full px-8 lg:px-0">
                     <div className="flex flex-col justify-center items-center gap-4 bg-[#201935] py-4 px-8 border border-[#332950] rounded-2xl w-full lg:w-1/4 box-content">

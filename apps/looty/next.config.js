@@ -13,7 +13,7 @@ const nextConfig = {
     svgr: false,
   },
   images: {
-      domains: ['ik.imagekit.io'],
+      domains: ['ik.imagekit.io', 'pbs.twimg.com'],
   },
 };
 

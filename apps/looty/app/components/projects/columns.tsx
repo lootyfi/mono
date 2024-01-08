@@ -3,53 +3,45 @@
 import { ColumnDef } from "@tanstack/react-table"
 import Image from "next/image"
 import { formatDate } from "../../lib/utils"
-import { Projects } from "../../lib/interface"
+import { IProject } from "../../lib/interface"
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 
-export const columns: ColumnDef<Projects>[] = [
+export const columns: ColumnDef<IProject>[] = [
     {
         accessorKey: "projectName",
         header: () => <div className="text-left font-normal">Project</div>,
         cell: ({ row }) => {
-            const project = row.original
-
+            const project = row.original;
             return (
                 <div className="flex items-center gap-4">
                     <Image
-                        src={project.image}
-                        alt={project.projectName}
+                        src={project.logo}
+                        alt={project.name}
                         width={100}
                         height={100}
                         className="rounded-2xl mr-2 w-[65px] h-[65px]"
                     />
                     <div className="text-2xl">
-                        <div className="font-semibold">{project.projectName}</div>
-                        <div className="text-xs opacity-60 flex items-center gap-2">Show Rewards
-                            <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="0.75" y="0.75" width="13.5" height="13.5" rx="6.75" stroke="#887299" strokeWidth="1.5" />
-                                <path d="M7.09234 11.0569L10.5615 7.58775M10.5615 7.58775L7.09234 4.11857M10.5615 7.58775L3.62316 7.58775" stroke="#887299" strokeWidth="2" strokeLinejoin="round" />
-                            </svg>
-
-                        </div>
+                        <div className="font-semibold">{project.name}</div>
                     </div>
                 </div>
             )
         }
     },
     {
-        accessorKey: "rewardsNumber",
-        header: () => <div className="text-left font-normal">Rewards number</div>,
+        accessorKey: "totalSupply",
+        header: () => <div className="text-left font-normal">Rewards inside</div>,
         cell: ({ row }) => {
-            const rewards = row.original.rewardsNumber;
+            const rewards = row.original.totalSupply;
             return <div className="text-left font-semibold text-2xl">{rewards}</div>
         }
     },
     {
-        accessorKey: "maxMintPrice",
-        header: () => <div className="text-left">Max Mint Price</div>,
+        accessorKey: "mintPrice",
+        header: () => <div className="text-left">Mint Price</div>,
         cell: ({ row }) => {
-            const amount = parseFloat(row.getValue("maxMintPrice"))
+            const amount = parseFloat(row.getValue("mintPrice"))
 
             return <div className="flex flex-col gap-1">
                 <div className="text-left font-semibold text-2xl flex items-center gap-3">
@@ -58,23 +50,23 @@ export const columns: ColumnDef<Projects>[] = [
                     </svg>
                     {amount}
                 </div>
-                <div className="text-xs opacity-60 flex items-center gap-2">Minimum mint price: 2.79 AVAX</div>
+                {/* <div className="text-xs opacity-60 flex items-center gap-2">Minimum mint price: 2.79 AVAX</div> */}
             </div>
         },
     },
     {
-        accessorKey: "keysMinted",
+        accessorKey: "remainingSupply",
         header: () => <div className="text-left font-normal">Keys Minted</div>,
         cell: ({ row }) => {
-            const keys = row.original.keysMinted;
+            const keys = row.original.remainingSupply;
             return <div className="text-left font-semibold text-[#53F493] text-2xl">{keys}</div>
         }
     },
     {
-        accessorKey: "remainingTime",
+        accessorKey: "endingAt",
         header: () => <div className="text-left font-normal">Remaining Time</div>,
         cell: ({ row }) => {
-            const time = row.original.remainingTime;
+            const time = row.original.endingAt;
             const formatted = formatDate(time);
             return <div className="text-left font-semibold text-2xl">{formatted}</div>
         }
